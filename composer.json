@@ -1,0 +1,11 @@
+{
+    "name": "app2641/sapphire-beans",
+    "require": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "psr-0": {
+            "Sapphire": "src/"
+        }
+    }
+}
