@@ -41,8 +41,8 @@ class Database extends \PDO
     {
         $this->_ifExistsDatabaseIni($database_block);
 
-        $dsn  = sprintf('mysql:dbname=%s;host=%s', $ini_data->db, $ini_data->host);
-        parent::__construct($dsn, $ini_data->username, $ini_data->password, array(
+        $dsn  = sprintf('mysql:dbname=%s;host=%s', $this->ini_data['db'], $this->ini_data['host']);
+        parent::__construct($dsn, $this->ini_data['username'], $this->ini_data['password'], array(
             \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_OBJ,
             \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION
         ));
@@ -69,7 +69,7 @@ class Database extends \PDO
         }
 
 
-        $this->ini_data = parse_ini_file(DB_INI_FILE, $dafile_get_contents);
+        $this->ini_data = parse_ini_file(DB_INI_FILE, true)[$database_block];
         if (! $this->ini_data) {
             throw new \Exception('Is not found '.$database_block.' block!');
         }
