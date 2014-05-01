@@ -2,7 +2,7 @@ SapphireBeans
 ==============
 SapphireBeans は俺々データベースクラスだ。
 
-## 設定ファイルの準備
+### 設定ファイルの準備
 まず、任意の場所に database.ini ファイルを生成する。
 
 ```
@@ -22,7 +22,7 @@ DB_INI_FILE 定数に database.ini へのパスを指定する。
 define('DB_INI_FILE', '/path/to/database.ini');
 ```
 
-## Helper クラス
+### Helper クラス
 Helper クラスからデータベースへ接続をする。
 
 ```
@@ -35,7 +35,7 @@ $user = $db->build($sql, 'hoge')->fetch();
 ```
 
 
-## Registry クラス
+### Registry クラス
 一度、Helper から接続できれば Registy クラスを介して接続を取得出来る。
 
 ```
@@ -48,7 +48,7 @@ $db->build($sql, array('piyo', 'ぴよ'));
 ```
 
 
-## 入れ子トランザクション
+### 入れ子トランザクション
 トランザクションを入れ子で動かすことが出来る。
 
 ```
